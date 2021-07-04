@@ -68,15 +68,18 @@ class _MealListViewState extends State<MealListView> {
         children: [
           CategoryList(state as MealListBlocReady, bloc),
           Expanded(
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 2 / 2,
-                crossAxisSpacing: 5,
-                mainAxisSpacing: 5,
+            child: Container(
+              margin: const EdgeInsets.all(10),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  childAspectRatio: 11 / 13,
+                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 5,
+                  maxCrossAxisExtent: 200,
+                ),
+                itemBuilder: (_, index) => MealListItem(widget.items[index]),
+                itemCount: widget.items.length,
               ),
-              itemBuilder: (_, index) => MealListItem(widget.items[index]),
-              itemCount: widget.items.length,
             ),
           ),
         ],
