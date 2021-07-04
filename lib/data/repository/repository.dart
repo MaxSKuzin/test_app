@@ -1,9 +1,20 @@
-import 'package:test_task/test_app/cubit/enums.dart';
-
-import './test_app/models/restaurant.dart';
-import './test_app/models/meal.dart';
+import 'package:test_task/domain/models/meal.dart';
+import 'package:test_task/domain/models/restaurant.dart';
+import 'package:test_task/domain/models/meal_category.dart';
 
 class Repository {
+  Repository._();
+
+  static Repository? _instance;
+
+  static Repository get instance {
+    if (_instance == null) {
+      _instance = Repository._();
+    }
+
+    return _instance!;
+  }
+
   List<Restaurant> _restaurants = [
     Restaurant('c1', 'Бургер Кинг'),
     Restaurant('c2', 'KFC'),
@@ -56,6 +67,7 @@ class Repository {
       categories: [
         MealCategory.single,
         MealCategory.popular,
+        MealCategory.drinks,
       ],
     ),
     Meal(
@@ -84,25 +96,10 @@ class Repository {
   ];
 
   Future<List<Restaurant>> fetchRestaurants() async {
-    return List.of(_fetchRestaurants());
-  }
-
-  List<Restaurant> _fetchRestaurants() {
-    return List.of(
-      List.generate(
-        _restaurants.length,
-        (index) => _restaurants[index],
-      ),
-    );
+    return _restaurants;
   }
 
   Future<List<Meal>> fetchMeals(String resId) async {
-    return List.of(_fetchMeals(resId));
-  }
-
-  List<Meal> _fetchMeals(String resId) {
-    return List.of(
-      _meals.where((meal) => meal.restaurants.contains(resId)),
-    );
+    return _meals.where((meal) => meal.restaurants.contains(resId)).toList();
   }
 }

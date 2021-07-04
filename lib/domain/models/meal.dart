@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:test_task/test_app/cubit/enums.dart';
-
-import '../../repository.dart';
+import 'package:test_task/domain/models/meal_category.dart';
 
 class Meal {
   final String id;

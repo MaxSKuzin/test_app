@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_task/repository.dart';
-import 'package:test_task/test_app/screens/meal_overview_screen.dart';
-import 'package:test_task/test_app/screens/restaurant_overview_screen.dart';
+import 'package:test_task/presentation/meal_overview_screen/meal_overview_screen.dart';
+import 'package:test_task/presentation/restaurant_overview_screen/restaurant_overview_screen.dart';
 
 class App extends MaterialApp {
   App()

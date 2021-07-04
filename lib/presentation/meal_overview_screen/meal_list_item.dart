@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_task/test_app/models/meal.dart';
+import 'package:test_task/domain/models/meal.dart';
 
 class MealListItem extends StatelessWidget {
   final Meal item;

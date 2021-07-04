@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_task/test_app/models/restaurant.dart';
-import 'package:test_task/test_app/screens/meal_overview_screen.dart';
+import 'package:test_task/domain/models/restaurant.dart';
+import 'package:test_task/presentation/meal_overview_screen/meal_overview_screen.dart';
 
 class RestaurantListItem extends StatelessWidget {
   const RestaurantListItem({
