@@ -12,10 +12,10 @@ class MealListCubit extends Cubit<MealListState> {
   MealListCubit({required this.repository})
       : super(const MealListState.loading());
 
-  Future<void> fetchList(String resId, MealCategory category) async {
+  Future<void> fetchList(String resId) async {
     try {
-      final items = await repository.fetchMeals(resId, category);
-      emit(MealListState.success(items, category));
+      final items = await repository.fetchMeals(resId);
+      emit(MealListState.success(items));
     } on Exception {
       emit(const MealListState.falture());
     }

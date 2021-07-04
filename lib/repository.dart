@@ -96,17 +96,13 @@ class Repository {
     );
   }
 
-  Future<List<Meal>> fetchMeals(String resId, MealCategory category) async {
-    return List.of(_fetchMeals(resId, category));
+  Future<List<Meal>> fetchMeals(String resId) async {
+    return List.of(_fetchMeals(resId));
   }
 
-  List<Meal> _fetchMeals(String resId, MealCategory category) {
+  List<Meal> _fetchMeals(String resId) {
     return List.of(
-      _meals.where(
-        (meal) =>
-            meal.restaurants.contains(resId) &&
-            meal.categories.contains(category),
-      ),
+      _meals.where((meal) => meal.restaurants.contains(resId)),
     );
   }
 }
