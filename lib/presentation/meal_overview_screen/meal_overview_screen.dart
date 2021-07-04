@@ -72,7 +72,7 @@ class _MealListViewState extends State<MealListView> {
               margin: const EdgeInsets.all(10),
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  childAspectRatio: 11 / 13,
+                  childAspectRatio: 2 / 2.5,
                   crossAxisSpacing: 5,
                   mainAxisSpacing: 5,
                   maxCrossAxisExtent: 200,

@@ -16,26 +16,29 @@ class MealListItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: const Radius.circular(15),
-              topRight: const Radius.circular(15),
-            ),
-            // child:
-            child: Container(
-              color: Colors.white,
-              child: Image.network(
-                item.imageUrl,
-                height: 100,
-                width: double.infinity,
-                fit: BoxFit.cover,
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: const Radius.circular(15),
+                topRight: const Radius.circular(15),
+              ),
+              // child:
+              child: Container(
+                color: Colors.white,
+                child: Image.network(
+                  item.imageUrl,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-            child: Text(
-              item.title,
+            child: FittedBox(
+              child: Text(
+                item.title,
+              ),
             ),
           ),
           Container(
